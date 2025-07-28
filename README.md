@@ -1,4 +1,4 @@
-## Hi there 👋
+## Hi 👋, I'm Ethan Gu (Software Engineer)
 
 <!--
 **EthanGu4/EthanGu4** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
