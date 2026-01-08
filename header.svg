@@ -1,52 +1,178 @@
-<svg width="1200" height="220" viewBox="0 0 1200 220" xmlns="http://www.w3.org/2000/svg">
+<svg width="1200" height="260" viewBox="0 0 1200 260" xmlns="http://www.w3.org/2000/svg">
   <defs>
+    <!-- Soft dusk gradient -->
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0b0f1a"/>
-      <stop offset="100%" stop-color="#111827"/>
+      <stop offset="0%" stop-color="#0b1020"/>
+      <stop offset="55%" stop-color="#0a0f18"/>
+      <stop offset="100%" stop-color="#06060b"/>
     </linearGradient>
 
+    <!-- Sakura glow gradient -->
+    <radialGradient id="pinkGlow" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#ffb7d5" stop-opacity="0.22"/>
+      <stop offset="55%" stop-color="#ff6fa8" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Subtle mist gradient -->
+    <radialGradient id="mist" cx="25%" cy="35%" r="85%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.08"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.02"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Glow filters -->
     <filter id="softGlow">
-      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feGaussianBlur stdDeviation="3" result="b"/>
       <feMerge>
-        <feMergeNode in="blur"/>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="textGlow">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feColorMatrix in="b" type="matrix"
+        values="1 0 0 0 0
+                0 1 0 0 0
+                0 0 1 0 0
+                0 0 0 0.9 0"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Petal symbol (simple 5-petal blossom) -->
+    <g id="petal" transform="translate(-10,-10)">
+      <path d="M10 0
+               C12 -2, 16 -2, 18 2
+               C20 6, 18 10, 10 20
+               C2 10, 0 6, 2 2
+               C4 -2, 8 -2, 10 0 Z"
+            fill="#ffd1e3" opacity="0.95"/>
+      <circle cx="10" cy="7" r="1.6" fill="#ff7fb1" opacity="0.85"/>
+    </g>
+
+    <!-- Tiny floating sparkle -->
+    <filter id="spark">
+      <feGaussianBlur stdDeviation="1.5" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
   </defs>
 
-  <rect width="1200" height="220" fill="url(#bg)"/>
+  <!-- Background -->
+  <rect width="1200" height="260" fill="url(#bg)"/>
+  <rect width="1200" height="260" fill="url(#pinkGlow)"/>
+  <rect width="1200" height="260" fill="url(#mist)" opacity="0.9"/>
 
-  <g opacity="0.9">
-    <circle cx="80" cy="60" r="1.5" fill="white" filter="url(#softGlow)">
-      <animate attributeName="cx" values="80;1240" dur="10s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.1;0.9;0.2" dur="4s" repeatCount="indefinite"/>
+  <!-- Soft vignette -->
+  <rect width="1200" height="260" fill="black" opacity="0.18"/>
+
+  <!-- Subtle horizon glow -->
+  <ellipse cx="600" cy="250" rx="560" ry="120" fill="#ffb7d5" opacity="0.06" filter="url(#softGlow)"/>
+
+  <!-- Sparkles (slow twinkle) -->
+  <g filter="url(#spark)" opacity="0.85">
+    <circle cx="140" cy="70" r="1.2" fill="white">
+      <animate attributeName="opacity" values="0.1;0.9;0.2" dur="4.2s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="200" cy="160" r="1.2" fill="white" filter="url(#softGlow)">
-      <animate attributeName="cx" values="200;1320" dur="13s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.2;1;0.3" dur="5s" repeatCount="indefinite"/>
+    <circle cx="360" cy="40" r="1" fill="white">
+      <animate attributeName="opacity" values="0.2;1;0.15" dur="5.1s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="420" cy="90" r="1.8" fill="white" filter="url(#softGlow)">
-      <animate attributeName="cx" values="420;1400" dur="9s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.15;0.95;0.25" dur="3.5s" repeatCount="indefinite"/>
+    <circle cx="860" cy="65" r="1.3" fill="white">
+      <animate attributeName="opacity" values="0.1;0.85;0.2" dur="4.6s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="640" cy="40" r="1.1" fill="white" filter="url(#softGlow)">
-      <animate attributeName="cx" values="640;1500" dur="15s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.1;0.8;0.2" dur="6s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="900" cy="140" r="1.6" fill="white" filter="url(#softGlow)">
-      <animate attributeName="cx" values="900;1600" dur="11s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.2;1;0.25" dur="4.2s" repeatCount="indefinite"/>
+    <circle cx="1040" cy="105" r="1.1" fill="white">
+      <animate attributeName="opacity" values="0.2;0.95;0.2" dur="5.7s" repeatCount="indefinite"/>
     </circle>
   </g>
 
-  <rect width="1200" height="220" fill="black" opacity="0.25"/>
+  <!-- Falling petals (each has its own path + rotation) -->
+  <g opacity="0.95" filter="url(#softGlow)">
+    <!-- Petal 1 -->
+    <g transform="translate(120,-30)">
+      <use href="#petal" />
+      <animateTransform attributeName="transform" type="translate"
+        values="120,-30; 190,290" dur="9.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" additive="sum" type="rotate"
+        values="0 10 10; 240 10 10" dur="4.2s" repeatCount="indefinite"/>
+    </g>
 
-  <text x="50%" y="52%" text-anchor="middle"
-        fill="white" font-size="46"
+    <!-- Petal 2 -->
+    <g transform="translate(260,-60) scale(0.85)">
+      <use href="#petal" />
+      <animateTransform attributeName="transform" type="translate"
+        values="260,-60; 180,290" dur="11s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" additive="sum" type="rotate"
+        values="0 10 10; -300 10 10" dur="5.3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.35;0.95;0.55" dur="3.8s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- Petal 3 -->
+    <g transform="translate(420,-40) scale(1.05)">
+      <use href="#petal" />
+      <animateTransform attributeName="transform" type="translate"
+        values="420,-40; 520,290" dur="10.2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" additive="sum" type="rotate"
+        values="0 10 10; 360 10 10" dur="3.9s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- Petal 4 -->
+    <g transform="translate(610,-80) scale(0.75)">
+      <use href="#petal" />
+      <animateTransform attributeName="transform" type="translate"
+        values="610,-80; 720,290" dur="12.4s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" additive="sum" type="rotate"
+        values="0 10 10; 420 10 10" dur="6.1s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.25;0.85;0.4" dur="4.5s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- Petal 5 -->
+    <g transform="translate(780,-55) scale(0.95)">
+      <use href="#petal" />
+      <animateTransform attributeName="transform" type="translate"
+        values="780,-55; 690,290" dur="10.8s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" additive="sum" type="rotate"
+        values="0 10 10; -360 10 10" dur="4.7s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- Petal 6 -->
+    <g transform="translate(980,-35) scale(0.9)">
+      <use href="#petal" />
+      <animateTransform attributeName="transform" type="translate"
+        values="980,-35; 1100,290" dur="9.9s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" additive="sum" type="rotate"
+        values="0 10 10; 300 10 10" dur="4.0s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;1;0.55" dur="3.2s" repeatCount="indefinite"/>
+    </g>
+
+    <g transform="translate(60,-90) scale(0.55)" opacity="0.65">
+      <use href="#petal" />
+      <animateTransform attributeName="transform" type="translate"
+        values="60,-90; 130,290" dur="14s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" additive="sum" type="rotate"
+        values="0 10 10; 420 10 10" dur="7.5s" repeatCount="indefinite"/>
+    </g>
+
+    <g transform="translate(1120,-100) scale(0.6)" opacity="0.6">
+      <use href="#petal" />
+      <animateTransform attributeName="transform" type="translate"
+        values="1120,-100; 1000,290" dur="15s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" additive="sum" type="rotate"
+        values="0 10 10; -480 10 10" dur="8.2s" repeatCount="indefinite"/>
+    </g>
+  </g>
+
+  <text x="50%" y="54%" text-anchor="middle"
+        fill="white" font-size="56"
         font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace"
-        letter-spacing="2">
+        letter-spacing="2" filter="url(#textGlow)">
     ✦ Ethan Gu ✦
   </text>
 
-  <line x1="360" y1="190" x2="840" y2="190" stroke="#d1d5db" stroke-width="1" opacity="0.6"/>
+  <line x1="360" y1="205" x2="840" y2="205" stroke="#ffd1e3" stroke-width="2" opacity="0.55"/>
 </svg>
