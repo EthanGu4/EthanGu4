@@ -72,8 +72,7 @@
   <!-- Soft vignette -->
   <rect width="1200" height="260" fill="black" opacity="0.18"/>
 
-  <!-- Subtle horizon glow -->
-  <ellipse cx="600" cy="250" rx="560" ry="120" fill="#ffb7d5" opacity="0.06" filter="url(#softGlow)"/>
+
 
   <!-- Sparkles (slow twinkle) -->
   <g filter="url(#spark)" opacity="0.85">
