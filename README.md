@@ -1,4 +1,15 @@
-## Hi 👋, I'm Ethan Gu (Software Engineer)
+<h1 align="center">
+  Ethan Gu
+</h1>
+
+<p align="center">
+  <a href="https://leetcode.com/gmjamal/" target="_blank">
+    <img
+      src="https://leetcard.jacoblin.cool/gmjamal?theme=dark&font=JetBrains%20Mono&hide_border=false&border=2&border_color=ffffff&radius=12"
+      alt="LeetCode Stats"
+    />
+  </a>
+</p>
 
 <!--
 **EthanGu4/EthanGu4** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
