@@ -1,0 +1,52 @@
+<svg width="1200" height="220" viewBox="0 0 1200 220" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b0f1a"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="220" fill="url(#bg)"/>
+
+  <g opacity="0.9">
+    <circle cx="80" cy="60" r="1.5" fill="white" filter="url(#softGlow)">
+      <animate attributeName="cx" values="80;1240" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.1;0.9;0.2" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="200" cy="160" r="1.2" fill="white" filter="url(#softGlow)">
+      <animate attributeName="cx" values="200;1320" dur="13s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.2;1;0.3" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="420" cy="90" r="1.8" fill="white" filter="url(#softGlow)">
+      <animate attributeName="cx" values="420;1400" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.15;0.95;0.25" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="640" cy="40" r="1.1" fill="white" filter="url(#softGlow)">
+      <animate attributeName="cx" values="640;1500" dur="15s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.1;0.8;0.2" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="900" cy="140" r="1.6" fill="white" filter="url(#softGlow)">
+      <animate attributeName="cx" values="900;1600" dur="11s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.2;1;0.25" dur="4.2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <rect width="1200" height="220" fill="black" opacity="0.25"/>
+
+  <text x="50%" y="52%" text-anchor="middle"
+        fill="white" font-size="46"
+        font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace"
+        letter-spacing="2">
+    ✦ Ethan Gu ✦
+  </text>
+
+  <line x1="360" y1="190" x2="840" y2="190" stroke="#d1d5db" stroke-width="1" opacity="0.6"/>
+</svg>
