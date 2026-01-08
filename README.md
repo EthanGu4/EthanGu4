@@ -1,6 +1,6 @@
-<h1 align="center">
-  Ethan Gu
-</h1>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/ethangu4/ethangu4/main/header.svg" alt="header" />
+</p>
 
 <p align="center">
   <a href="https://leetcode.com/gmjamal/" target="_blank">
